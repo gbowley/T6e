@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<roms>
+  <rom>
+    <romid>
+      <xmlid>P1380009</xmlid>
+      <market>ROW</market>
+      <make>Lotus</make>
+      <model>Exige</model>
+      <submodel>V6S</submodel>
+      <transmission>6MT</transmission>
+      <filesize>1048576</filesize>
+      <memmodel>MPC5534</memmodel>
+      <flashmethod>CRP</flashmethod>
+      <internalidaddress>0x00020000</internalidaddress>
+      <internalidstring>P138</internalidstring>
+      <noRamOffset>1</noRamOffset>
+    </romid>
+    <table category="AIRMASSSENSOR" endian="big" name="AIRMASSSENSOR: SlopeAN39" storageaddress="0x20028" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="10.0" expression="x/1024.0" fineincrement="0.0001" format="0.0000" to_byte="x*1024.0" units="slope"/>
+      <description/>
+    </table>
+    <table category="AIRMASSSENSOR" endian="big" name="AIRMASSSENSOR: BaseOffset" storageaddress="0x2002A" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="LIMITS" endian="big" name="LIMITS: TorqueFactor Gear1" storageaddress="0x20052" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <description/>
+    </table>
+    <table category="LIMITS" endian="big" name="LIMITS: TorqueFactor Gear2" storageaddress="0x20053" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <description/>
+    </table>
+    <table category="LIMITS" endian="big" name="LIMITS: TorqueFactor Gear3" storageaddress="0x20054" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <description/>
+    </table>
+    <table category="LIMITS" endian="big" name="LIMITS: TorqueFactor Gear4" storageaddress="0x20055" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <description/>
+    </table>
+    <table category="LIMITS" endian="big" name="LIMITS: TorqueFactor Gear5" storageaddress="0x20056" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <description/>
+    </table>
+    <table category="LIMITS" endian="big" name="LIMITS: TorqueFactor Gear6" storageaddress="0x200B1" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <description/>
+    </table>
+    <table category="OPERATINGMODE" endian="big" name="OPERATINGMODE: RPM IdleEntry Max" storageaddress="0x200C6" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="OPERATINGMODE" endian="big" name="OPERATINGMODE: RPM CruiseEntry Max" storageaddress="0x200C7" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="OPERATINGMODE" endian="big" name="OPERATINGMODE: RPM PerformanceEntry Max" storageaddress="0x200C8" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="OPERATINGMODE" endian="big" name="OPERATINGMODE: RPM TransitionHysteresis" storageaddress="0x200C9" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: InjectorFlowRate" storageaddress="0x20200" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="mg/s"/>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: ECTCorrectionSet1" sizex="12" sizey="16" storageaddress="0x204C2" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="Load" storageaddress="0x204A6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <table endian="big" name="ECT" storageaddress="0x204B2" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: IATEngineRuntimeCorrection" sizex="10" sizey="10" storageaddress="0x205AE" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="IAT" storageaddress="0x2059A" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <table endian="big" name="EngineRuntime" storageaddress="0x205A4" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="s"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingIntakeCamFallbackOffset" sizex="8" storageaddress="0x206C2" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="IntakeCamAngle" storageaddress="0x206BA" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingAdaptiveKnockCorrectiondRPMB" sizex="16" storageaddress="0x2074C" storagetype="int8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x-128)/4" fineincrement="0.25" format="0.00" to_byte="(x*4)+128" units="°"/>
+      <table endian="big" name="dRPM" storageaddress="0x2073C" storagetype="int8" type="X Axis">
+        <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      </table>
+      <description/>
+    </table>
+    <table category="TRACTION" endian="big" name="TRACTION: TCSwitchedGainMap" sizex="8" sizey="16" storageaddress="0x20774" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x2075C" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="ThrottleXPID" storageaddress="0x20764" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      </table>
+      <description/>
+    </table>
+    <table category="VVT" endian="big" name="VVT: IntakeTargetAngle" sizex="16" sizey="16" storageaddress="0x20846" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x20826" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x20836" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="VVT" endian="big" name="VVT: IntakeFeedbackTrim" sizex="16" storageaddress="0x20956" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="IntakeCamAngle" storageaddress="0x20946" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: ECTEngineRuntimeCorrectionSet2" sizex="12" sizey="14" storageaddress="0x20980" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="ECT" storageaddress="0x20966" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <table endian="big" name="EngineRuntime" storageaddress="0x20972" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="s"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: ECTEngineRuntimeCorrectionSet1" sizex="12" sizey="14" storageaddress="0x20A42" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="ECT" storageaddress="0x20A28" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <table endian="big" name="EngineRuntime" storageaddress="0x20A34" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="s"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingExhaustCamLoadScaler" sizex="16" storageaddress="0x20B5E" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="Load" storageaddress="0x20B4E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IDLE" endian="big" name="IDLE: TargetRPMSet5" sizex="16" storageaddress="0x20B7E" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="25" expression="x*10" fineincrement="10" format="0" to_byte="x/10" units="rpm"/>
+      <table endian="big" name="ECT" storageaddress="0x20B6E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingECTAdderBNormal" sizex="16" storageaddress="0x20C96" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="ECT" storageaddress="0x20C86" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingAdaptiveKnockCorrectiondRPMA" sizex="16" storageaddress="0x20CB6" storagetype="int8" type="2D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <table endian="big" name="dRPM" storageaddress="0x20CA6" storagetype="int8" type="X Axis">
+        <scaling coarseincrement="1.0" expression="(x-128)/4" fineincrement="0.25" format="0.00" to_byte="(x*4)+128" units="°"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingIATcomp" sizex="16" storageaddress="0x20CD6" storagetype="int8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x-128)/4" fineincrement="0.25" format="0.00" to_byte="(x*4)+128" units="°"/>
+      <table endian="big" name="IAT" storageaddress="0x20CC6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: VolumetricEfficiencyBase" sizex="32" sizey="32" storageaddress="0x20FE6" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/200" fineincrement="1" format="0.0" to_byte="x*200/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x20FA6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x20FC6" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IDLE" endian="big" name="IDLE: TargetRPMSet6" sizex="16" storageaddress="0x213F6" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="25" expression="x*10" fineincrement="10" format="0" to_byte="x/10" units="rpm"/>
+      <table endian="big" name="ECT" storageaddress="0x213E6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="VVT" endian="big" name="VVT: ExhaustTargetAngle" sizex="16" sizey="16" storageaddress="0x21446" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x21426" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x21436" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: ECTCorrectionSet2" sizex="12" sizey="16" storageaddress="0x215C2" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="Load" storageaddress="0x215A6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <table endian="big" name="ECT" storageaddress="0x215B2" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: IATFuelCorrection" sizex="8" sizey="16" storageaddress="0x216DE" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="Load" storageaddress="0x216C6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <table endian="big" name="IAT" storageaddress="0x216CE" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingEngineRuntimevsLoadCompB" sizex="8" sizey="8" storageaddress="0x2195E" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="EngineRuntime" storageaddress="0x2194E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="s"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x21956" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingOffsetUnknownUse" sizex="20" sizey="20" storageaddress="0x21A16" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x219EE" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x21A02" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description>It is not clear how this timing table is used. Looks like it could be optimal timing. Suggest leaving as-is.</description>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingBaseSafetyManual" sizex="20" sizey="20" storageaddress="0x21BCE" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-10" fineincrement="0.25" format="0.00" to_byte="(x+10)*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x21BA6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x21BBA" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingBaseMainManual" sizex="20" sizey="20" storageaddress="0x21D86" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-10" fineincrement="0.25" format="0.00" to_byte="(x+10)*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x21D5E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x21D72" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingBaseSafetyAuto" sizex="20" sizey="20" storageaddress="0x21F3E" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-10" fineincrement="0.25" format="0.00" to_byte="(x+10)*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x21F16" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x21F2A" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingRPMBaseForECTScaling" sizex="16" storageaddress="0x2237E" storagetype="int8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x-128)/4" fineincrement="0.25" format="0.00" to_byte="(x*4)+128" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x2236E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingECTxRPMScalar" sizex="8" storageaddress="0x22396" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="ECT" storageaddress="0x2238E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingCompAccelDecelvEngineAccel" sizex="16" storageaddress="0x223AE" storagetype="int8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x-128)/4" fineincrement="0.25" format="0.00" to_byte="(x*4)+128" units="°"/>
+      <table endian="big" name="EngineAccel" storageaddress="0x2239E" storagetype="int8" type="X Axis">
+        <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      </table>
+      <description/>
+    </table>
+    <table category="VVT" endian="big" name="VVT: AdaptivePIDDelayScaler" sizex="8" storageaddress="0x223C6" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <table endian="big" name="IntakeCamAngle" storageaddress="0x223BE" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingTorqueStabilityComp" sizex="8" storageaddress="0x223E6" storagetype="int8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x-128)/4" fineincrement="0.25" format="0.00" to_byte="(x*4)+128" units="°"/>
+      <table endian="big" name="TorqueDeviation" storageaddress="0x223DE" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="x-40" fineincrement="1" format="0" to_byte="x+40" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: IATFuelCalibration" sizex="8" sizey="8" storageaddress="0x2268E" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="Load" storageaddress="0x2267E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <table endian="big" name="IAT" storageaddress="0x22686" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IDLE" endian="big" name="IDLE: RPMTargetA" sizex="16" storageaddress="0x2278E" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="25" expression="x*10" fineincrement="10" format="0" to_byte="x/10" units="rpm"/>
+      <table endian="big" name="ECT" storageaddress="0x2277E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: AirmassTargetInitial" sizex="16" sizey="16" storageaddress="0x227BE" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      <table endian="big" name="RPM" storageaddress="0x2279E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x227AE" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: TargetAFR" sizex="16" sizey="16" storageaddress="0x228DE" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="0.5" expression="(x/20)+5" fineincrement="0.05" format="0.0" to_byte="(x-5)*20" units="A/F"/>
+      <table endian="big" name="RPM" storageaddress="0x228BE" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x228CE" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="KNOCKCONTROL" endian="big" name="KNOCKCONTROL: GlobalGain" sizex="8" sizey="8" storageaddress="0x22A6E" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x22A5E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x22A66" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="KNOCKCONTROL" endian="big" name="KNOCKCONTROL: KnockThreshBase" sizex="8" sizey="8" storageaddress="0x22ABE" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x22AAE" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x22AB6" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="KNOCKCONTROL" endian="big" name="KNOCKCONTROL: KnockEventCorrection" sizex="8" storageaddress="0x22B06" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="KnockIntensity" storageaddress="0x22AFE" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      </table>
+      <description/>
+    </table>
+    <table category="KNOCKCONTROL" endian="big" name="KNOCKCONTROL: EnableLoadThreshA RPM" sizex="8" storageaddress="0x22B16" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x22B0E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <description/>
+    </table>
+    <table category="KNOCKCONTROL" endian="big" name="KNOCKCONTROL: EnableLoadThreshB RPM" sizex="8" storageaddress="0x22B26" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x22B1E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <description/>
+    </table>
+    <table category="TRACTION" endian="big" name="TRACTION: TCSwitchedActionMap" sizex="8" sizey="16" storageaddress="0x22D36" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x22D1E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="ThrottleXPID" storageaddress="0x22D26" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      </table>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: TorqueDemandFilter" sizex="16" sizey="16" storageaddress="0x22DD6" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x22DB6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="LoadAltTorqueDemand" storageaddress="0x22DC6" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: TorqueLimitFine" sizex="16" sizey="16" storageaddress="0x23016" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="8" expression="x*2" fineincrement="2" format="0" to_byte="x/2" units="Newton meter"/>
+      <table endian="big" name="RPM" storageaddress="0x22FF6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="TorqueInputForFineLimit" storageaddress="0x23006" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="8" expression="x*2" fineincrement="2" format="0" to_byte="x/2" units="Newton meter"/>
+      </table>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: TCSlipTarget" sizex="16" sizey="16" storageaddress="0x23136" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x23116" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="AirmassTarget" storageaddress="0x23126" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: LoadBasedEfficiency" sizex="16" sizey="16" storageaddress="0x23256" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x23236" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="CorrectedLoad" storageaddress="0x23246" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingFloor" sizex="16" sizey="16" storageaddress="0x23376" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x23356" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x23366" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IDLE" endian="big" name="IDLE: RPMTargetAC" sizex="16" storageaddress="0x23486" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="25" expression="x*10" fineincrement="10" format="0" to_byte="x/10" units="rpm"/>
+      <table endian="big" name="ECT" storageaddress="0x23476" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: Torque BaseRequest" sizex="16" sizey="16" storageaddress="0x234B6" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="8" expression="x*2" fineincrement="2" format="0" to_byte="x/2" units="Newton meter"/>
+      <table endian="big" name="RPM" storageaddress="0x23496" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x234A6" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: TorqueEfficiencyCorrection" sizex="16" sizey="16" storageaddress="0x23626" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/128" fineincrement="1" format="0" to_byte="x*128/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x23606" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="StateVariable" storageaddress="0x23616" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      </table>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: InputEfficiencyMap" sizex="16" sizey="16" storageaddress="0x23746" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x23726" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x23736" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingCompEfficiencyAndLearnedKnock" sizex="16" sizey="16" storageaddress="0x23866" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x23846" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x23856" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingECTAdderANormal" sizex="16" storageaddress="0x239B6" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="ECT" storageaddress="0x239A6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="REVLIMIT" endian="big" name="REVLIMIT: Tour" sizex="8" sizey="8" storageaddress="0x239D6" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="100" expression="(x*10)+6000" fineincrement="10" format="0" to_byte="(x-6000)/10" units="rpm"/>
+      <table endian="big" name="ECT" storageaddress="0x239C6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <table endian="big" name="TimeAtLimiter" storageaddress="0x239CE" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="s"/>
+      </table>
+      <description/>
+    </table>
+    <table category="REVLIMIT" endian="big" name="REVLIMIT: Sport" sizex="8" sizey="8" storageaddress="0x23A26" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="100" expression="(x*10)+6000" fineincrement="10" format="0" to_byte="(x-6000)/10" units="rpm"/>
+      <table endian="big" name="ECT" storageaddress="0x23A16" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <table endian="big" name="TimeAtLimiter" storageaddress="0x23A1E" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="s"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: StaticFuelOffset" sizex="32" sizey="32" storageaddress="0x23AC6" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <table endian="big" name="RPM" storageaddress="0x23A86" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x23AA6" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IDLE" endian="big" name="IDLE: TargetRPMAC2" sizex="16" storageaddress="0x23FF6" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="25" expression="x*10" fineincrement="10" format="0" to_byte="x/10" units="rpm"/>
+      <table endian="big" name="ECT" storageaddress="0x23FE6" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IDLE" endian="big" name="IDLE: TargetRPMSet3" sizex="16" storageaddress="0x24016" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="25" expression="x*10" fineincrement="10" format="0" to_byte="x/10" units="rpm"/>
+      <table endian="big" name="ECT" storageaddress="0x24006" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="VVT" endian="big" name="VVT: ExhaustToIntakePhaseOffset" sizex="16" storageaddress="0x24046" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="IntakeCamAngle" storageaddress="0x24036" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingECTAdderBHigh" sizex="16" storageaddress="0x2406E" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="ECT" storageaddress="0x2405E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingECTAdderAHigh" sizex="16" storageaddress="0x2408E" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="ECT" storageaddress="0x2407E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+    <table category="VVT" endian="big" name="VVT: IntakeTargetAngleIdle" sizex="6" sizey="6" storageaddress="0x240AA" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x2409E" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x240A4" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="VVT" endian="big" name="VVT: ExhaustTargetAngleIdle" sizex="6" sizey="6" storageaddress="0x24122" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x24116" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x2411C" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingIntakeCamvsEngineRuntimeCompA" sizex="4" sizey="10" storageaddress="0x241AA" storagetype="uint16" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <table endian="big" name="IntakeCamAngle" storageaddress="0x2418E" storagetype="uint16" type="X Axis">
+        <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      </table>
+      <table endian="big" name="EngineRuntime" storageaddress="0x24196" storagetype="uint16" type="Y Axis">
+        <scaling coarseincrement="50" expression="x" fineincrement="10" format="0" to_byte="x" units="mbar"/>
+      </table>
+      <description/>
+    </table>
+    <table category="REVLIMIT" endian="big" name="REVLIMIT: SoftLimtPerGear" sizex="7" storageaddress="0x24201" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="8" expression="x*2" fineincrement="2" format="0" to_byte="x/2" units="rpm"/>
+      <table endian="big" name="Gear" storageaddress="0x241FA" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      </table>
+      <description>Applied as negative offset to calculated RPM limit</description>
+    </table>
+    <table category="THRESHOLD" endian="big" name="THRESHOLD: B" storageaddress="0x2457F" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="THRESHOLD" endian="big" name="THRESHOLD: A Extended" storageaddress="0x24581" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingBaseMainAuto" sizex="20" sizey="20" storageaddress="0x249C8" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-10" fineincrement="0.25" format="0.00" to_byte="(x+10)*4" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x249A0" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x249B4" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="MISC" endian="big" name="MISC: SCBypassDriver" sizex="8" sizey="8" storageaddress="0x250F8" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x250E8" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x250F0" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: RelativeTemperatureFuelCorrection" sizex="8" sizey="8" storageaddress="0x252C0" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="IAT" storageaddress="0x252B0" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      </table>
+      <table endian="big" name="ECT" storageaddress="0x252B8" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: EngineRuntimeBasedTransientFactor" sizex="10" storageaddress="0x2530A" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="40" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mbar"/>
+      <table endian="big" name="EngineRuntime" storageaddress="0x25300" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="s"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: AccelEnrichmentdTPS" sizex="10" storageaddress="0x2531E" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="dTPS" storageaddress="0x25314" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: ClosedLoopFactor" sizex="16" sizey="16" storageaddress="0x25D84" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="(x*100/128)-100" fineincrement="1" format="0" to_byte="(x+100)*128/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x25D64" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="Load" storageaddress="0x25D74" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: TorqueLimitCoarse" sizex="16" sizey="16" storageaddress="0x25EB4" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="8" expression="x*2" fineincrement="2" format="0" to_byte="x/2" units="Newton meter"/>
+      <table endian="big" name="RPM" storageaddress="0x25E94" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="TorqueInputforCoarse" storageaddress="0x25EA4" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="8" expression="x*2" fineincrement="2" format="0" to_byte="x/2" units="Newton meter"/>
+      </table>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: TimingIATBaseComponent" sizex="16" sizey="8" storageaddress="0x2606C" storagetype="int8" type="3D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x-128)/4" fineincrement="0.25" format="0.00" to_byte="(x*4)+128" units="°"/>
+      <table endian="big" name="RPM" storageaddress="0x26054" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="IAT" storageaddress="0x26064" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      </table>
+      <description/>
+    </table>
+  </rom>
+  <rom>
+    <romid>
+      <xmlid>P1380009</xmlid>
+      <market>ROW</market>
+      <make>Lotus</make>
+      <model>Exige</model>
+      <submodel>V6S</submodel>
+      <transmission>6MT</transmission>
+      <filesize>1048576</filesize>
+      <memmodel>MPC5534</memmodel>
+      <flashmethod>CRP</flashmethod>
+      <internalidaddress>0x00020000</internalidaddress>
+      <internalidstring>P138</internalidstring>
+      <noRamOffset>1</noRamOffset>
+    </romid>
+    <table category="CYLINDER" endian="big" name="CYLINDER: ActiveStatus Array" sizex="6" storageaddress="0x12F8" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <table name="Index" type="Static X Axis">
+        <data>0</data>
+        <data>1</data>
+        <data>2</data>
+        <data>3</data>
+        <data>4</data>
+        <data>5</data>
+      </table>
+      <description/>
+    </table>
+    <table category="TIMING" endian="big" name="TIMING: IAT Correction" storageaddress="0x132A" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="ADAPTIVETIMING" endian="big" name="ADAPTIVETIMING: GlobalGain Current" storageaddress="0x1399" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="OPERATINGMODE" endian="big" name="OPERATINGMODE: Switch Request" storageaddress="0x1409" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description>1, 2, or 3</description>
+    </table>
+    <table category="INTAKECAM" endian="big" name="INTAKECAM: Mode" storageaddress="0x1500" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="INPUT" endian="big" name="INPUT: A" storageaddress="0x1542" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="BASE" endian="big" name="BASE: EngineRPM" storageaddress="0x15BA" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      <description/>
+    </table>
+    <table category="BASE" endian="big" name="BASE: EngineRPM scaled 2" storageaddress="0x15BC" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      <description/>
+    </table>
+    <table category="TMAF" endian="big" name="TMAF: AirTemperature Smoothed" storageaddress="0x15BE" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <description/>
+    </table>
+    <table category="COOLANTTEMPERATURE" endian="big" name="COOLANTTEMPERATURE: Smoothed" storageaddress="0x15BF" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <description/>
+    </table>
+    <table category="BASE" endian="big" name="BASE: EngineRPM Filtered" storageaddress="0x15C0" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      <description/>
+    </table>
+    <table category="SYSTEMSTATUSFLAGS" endian="big" name="SYSTEMSTATUSFLAGS: A" storageaddress="0x15C2" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CRANKSHAFT" endian="big" name="CRANKSHAFT: PulsePeriod Raw" storageaddress="0x15C4" storagetype="uint32" type="1D" userlevel="1">
+      <scaling coarseincrement="1000" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="TMAF" endian="big" name="TMAF: AirTemperature" storageaddress="0x1682" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="x/4" fineincrement="0.25" format="0.00" to_byte="x*4" units="°"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: STFT Bank1 AN22" storageaddress="0x1692" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="1" expression="x*100/1000" fineincrement="0.1" format="0.00" to_byte="x*1000/100" units="%"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: STFT Bank2 AN23" storageaddress="0x1694" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="1" expression="x*100/1000" fineincrement="0.1" format="0.00" to_byte="x*1000/100" units="%"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: STFT PostCat Bank1 AN24" storageaddress="0x1696" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="1" expression="x*100/1000" fineincrement="0.1" format="0.00" to_byte="x*1000/100" units="%"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: STFT PostCat Bank2 AN25" storageaddress="0x1698" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="1" expression="x*100/1000" fineincrement="0.1" format="0.00" to_byte="x*1000/100" units="%"/>
+      <description/>
+    </table>
+    <table category="BASE" endian="big" name="BASE: EngineLoad MAF An20" storageaddress="0x169C" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="mg/s"/>
+      <description/>
+    </table>
+    <table category="IGNITION" endian="big" name="IGNITION: DwellBase uS" storageaddress="0x1734" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x" fineincrement="1" format="0" to_byte="x" units="mg"/>
+      <description/>
+    </table>
+    <table category="TIMING" endian="big" name="TIMING: FinalAdvance Cyl1 Base" storageaddress="0x1748" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-20" fineincrement="0.25" format="0.00" to_byte="(x+20)*4" units="°"/>
+      <description/>
+    </table>
+    <table category="TIMING" endian="big" name="TIMING: FinalAdvance Cyl2 Base" storageaddress="0x174A" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-20" fineincrement="0.25" format="0.00" to_byte="(x+20)*4" units="°"/>
+      <description/>
+    </table>
+    <table category="TIMING" endian="big" name="TIMING: FinalAdvance Cyl3 Base" storageaddress="0x174C" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-20" fineincrement="0.25" format="0.00" to_byte="(x+20)*4" units="°"/>
+      <description/>
+    </table>
+    <table category="TIMING" endian="big" name="TIMING: FinalAdvance Cyl4 Base" storageaddress="0x174E" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-20" fineincrement="0.25" format="0.00" to_byte="(x+20)*4" units="°"/>
+      <description/>
+    </table>
+    <table category="TIMING" endian="big" name="TIMING: FinalAdvance Cyl5 Base" storageaddress="0x1750" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-20" fineincrement="0.25" format="0.00" to_byte="(x+20)*4" units="°"/>
+      <description/>
+    </table>
+    <table category="TIMING" endian="big" name="TIMING: FinalAdvance Cyl6 Base" storageaddress="0x1752" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="1.0" expression="(x/4)-20" fineincrement="0.25" format="0.00" to_byte="(x+20)*4" units="°"/>
+      <description/>
+    </table>
+    <table category="TIMING" endian="big" name="TIMING: LoadMultiplier" storageaddress="0x1764" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="SENSOR" endian="big" name="SENSOR: Processed B" storageaddress="0x1978" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="INITIALAIRMASSTARGET" endian="big" name="INITIALAIRMASSTARGET: Scaled" storageaddress="0x19A8" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="TARGETSLIP" endian="big" name="TARGETSLIP: Scaled" storageaddress="0x19AA" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="PID" endian="big" name="PID: 0x226 EngineLoad Filtered" storageaddress="0x19B3" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <description/>
+    </table>
+    <table category="FACTORB" endian="big" name="FACTORB: From RPM" storageaddress="0x19B4" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CORRECTION" endian="big" name="CORRECTION: VIN12 from RPM" storageaddress="0x19B5" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FACTORC" endian="big" name="FACTORC: From RPM" storageaddress="0x19B6" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FACTORA" endian="big" name="FACTORA: From RPM" storageaddress="0x19B7" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: LearnDeadTime Bank1" storageaddress="0x19E8" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="us"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: LearnDeadTime Bank2" storageaddress="0x19E9" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="us"/>
+      <description/>
+    </table>
+    <table category="MAINSTATUSFLAGS" endian="big" name="MAINSTATUSFLAGS: B" storageaddress="0x1A42" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="MAINSTATUSFLAGS" endian="big" name="MAINSTATUSFLAGS: A" storageaddress="0x1A44" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FEATURED" endian="big" name="FEATURED: OutputFlag" storageaddress="0x1A52" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="STATUS" endian="big" name="STATUS: Counter1" storageaddress="0x1A58" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="DIAGROUTINE" endian="big" name="DIAGROUTINE: Counter" storageaddress="0x1A5B" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="PREVIOUS" endian="big" name="PREVIOUS: Output D" storageaddress="0x1B34" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="MAP1" endian="big" name="MAP1: BaseOutput" storageaddress="0x1BCB" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="MODEFLAG" endian="big" name="MODEFLAG: Output2" storageaddress="0x1BE4" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="MODEFLAG" endian="big" name="MODEFLAG: Output1" storageaddress="0x1BE5" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="SYSTEM" endian="big" name="SYSTEM: StatusFlags Word A" storageaddress="0x1C38" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="SYSTEMERRORFLAGS" endian="big" name="SYSTEMERRORFLAGS: Word" storageaddress="0x1FA0" storagetype="uint32" type="1D" userlevel="1">
+      <scaling coarseincrement="1000" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FLAG" endian="big" name="FLAG: VVT Learn ConditionMet" storageaddress="0x2133" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="ETB" endian="big" name="ETB: PID Output Percentage" storageaddress="0x216E" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="%"/>
+      <description/>
+    </table>
+    <table category="PID" endian="big" name="PID: 0x23B Torque Actual Smoothed" storageaddress="0x2170" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="8" expression="x*2" fineincrement="2" format="0" to_byte="x/2" units="Newton meter"/>
+      <description/>
+    </table>
+    <table category="TORQUE" endian="big" name="TORQUE: Target Actual" storageaddress="0x2172" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="8" expression="x*2" fineincrement="2" format="0" to_byte="x/2" units="Newton meter"/>
+      <description/>
+    </table>
+    <table category="CRANKADAPT" endian="big" name="CRANKADAPT: SomeInput A" storageaddress="0x2202" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FFT" endian="big" name="FFT: StageCounter" storageaddress="0x2219" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="UPDATETRIGGER" endian="big" name="UPDATETRIGGER: Flag" storageaddress="0x221A" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FLAGS" endian="big" name="FLAGS: OperatingMode LatchRequested" storageaddress="0x221D" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="SCALER" endian="big" name="SCALER: LoopCount" storageaddress="0x2220" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="SENSORSTATUSFLAGS" endian="big" name="SENSORSTATUSFLAGS: B" storageaddress="0x2280" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="SENSOR" endian="big" name="SENSOR: Input D Negated" storageaddress="0x2284" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="MAINTORQUEREQUEST" endian="big" name="MAINTORQUEREQUEST: Unprocessed" storageaddress="0x22D8" storagetype="int32" type="1D" userlevel="1">
+      <scaling coarseincrement="1000" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="TASK" endian="big" name="TASK: Control Byte" storageaddress="0x22E0" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="TASK" endian="big" name="TASK: Source Byte" storageaddress="0x22E1" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CRANKADAPT" endian="big" name="CRANKADAPT: StabilityMetric" storageaddress="0x235C" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CRANKADAPT" endian="big" name="CRANKADAPT: RawSensorValue2" storageaddress="0x235E" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: Scaled Secondary" storageaddress="0x2368" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CMD" endian="big" name="CMD: CylinderCutMode" storageaddress="0x2369" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CRANKADAPT" endian="big" name="CRANKADAPT: IsActiveFlag" storageaddress="0x2377" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="SYSTEMCONFIG" endian="big" name="SYSTEMCONFIG: ControlFlags" storageaddress="0x2402" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="SYSTEM" endian="big" name="SYSTEM: ConfigFlags Byte A" storageaddress="0x24A8" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="SYSTEM" endian="big" name="SYSTEM: ConfigFlags Byte B" storageaddress="0x24A9" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FEATURESETB" endian="big" name="FEATURESETB: StatusFlags" storageaddress="0x24B0" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FEATUREC" endian="big" name="FEATUREC: StatusFlags" storageaddress="0x24B2" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FEATURESETE" endian="big" name="FEATURESETE: MainTimer" storageaddress="0x24C4" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CRANKADAPT" endian="big" name="CRANKADAPT: State" storageaddress="0x24C8" storagetype="uint8" type="1D" userlevel="1">
+      <scaling coarseincrement="10" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CRANKADAPT" endian="big" name="CRANKADAPT: LearnedCorrectionValue" storageaddress="0x24CC" storagetype="int32" type="1D" userlevel="1">
+      <scaling coarseincrement="1000" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CRANKADAPT" endian="big" name="CRANKADAPT: Timer" storageaddress="0x24D0" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CRANKADAPT" endian="big" name="CRANKADAPT: TargetValue1" storageaddress="0x24D2" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="CRANKADAPT" endian="big" name="CRANKADAPT: Tolerance" storageaddress="0x24D4" storagetype="uint16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="LOAD" endian="big" name="LOAD: TorqueReductionRPMFactorBase" sizex="16" sizey="16" storageaddress="0x2E78" storagetype="uint8" type="3D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/255" fineincrement="1" format="0.0" to_byte="x*255/100" units="%"/>
+      <table endian="big" name="RPM" storageaddress="0x2E58" storagetype="uint8" type="X Axis">
+        <scaling coarseincrement="100" expression="(x*125/4)+500" fineincrement="32" format="0" to_byte="(x-500)*4/125" units="rpm"/>
+      </table>
+      <table endian="big" name="AirmassTarget" storageaddress="0x2E68" storagetype="uint8" type="Y Axis">
+        <scaling coarseincrement="20" expression="x*4" fineincrement="4" format="0" to_byte="x/4" units="mg/stroke"/>
+      </table>
+      <description/>
+    </table>
+    <table category="PID" endian="big" name="PID: 0x22E Source" storageaddress="0x2F88" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="PID" endian="big" name="PID: 0x255 Source" storageaddress="0x2F8A" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="PIDSOURCE" endian="big" name="PIDSOURCE: A" storageaddress="0x3698" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="PIDSOURCE" endian="big" name="PIDSOURCE: B" storageaddress="0x369A" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="100" expression="x" fineincrement="1" format="0" to_byte="x" units="#"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: MaxLearned Bank1" storageaddress="0x4350" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="1" expression="x*100/1000" fineincrement="0.1" format="0.00" to_byte="x*1000/100" units="%"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: MaxLearned Bank2" storageaddress="0x4364" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="1" expression="x*100/1000" fineincrement="0.1" format="0.00" to_byte="x*1000/100" units="%"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: LearnedAvg Bank1" storageaddress="0x448C" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="1" expression="x*100/1000" fineincrement="0.1" format="0.00" to_byte="x*1000/100" units="%"/>
+      <description/>
+    </table>
+    <table category="FUELADAPT" endian="big" name="FUELADAPT: LearnedAvg Bank2" storageaddress="0x4498" storagetype="int16" type="1D" userlevel="1">
+      <scaling coarseincrement="1" expression="x*100/1000" fineincrement="0.1" format="0.00" to_byte="x*1000/100" units="%"/>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: CompECT" sizex="16" storageaddress="0xA6DA" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="2" expression="(x*5/8)-40" fineincrement="0.625" format="0.0" to_byte="(x+40)*8/5" units="°C"/>
+      <table name="Index" type="Static X Axis">
+        <data>0</data>
+        <data>1</data>
+        <data>2</data>
+        <data>3</data>
+        <data>4</data>
+        <data>5</data>
+        <data>6</data>
+        <data>7</data>
+        <data>8</data>
+        <data>9</data>
+        <data>10</data>
+        <data>11</data>
+        <data>12</data>
+        <data>13</data>
+        <data>14</data>
+        <data>15</data>
+      </table>
+      <description/>
+    </table>
+    <table category="FUEL" endian="big" name="FUEL: CompECT" sizex="16" storageaddress="0xA6EA" storagetype="uint8" type="2D" userlevel="1">
+      <scaling coarseincrement="5" expression="x*100/256" fineincrement="1" format="0.0" to_byte="x*256/100" units="%"/>
+      <table name="Index" type="Static X Axis">
+        <data>0</data>
+        <data>1</data>
+        <data>2</data>
+        <data>3</data>
+        <data>4</data>
+        <data>5</data>
+        <data>6</data>
+        <data>7</data>
+        <data>8</data>
+        <data>9</data>
+        <data>10</data>
+        <data>11</data>
+        <data>12</data>
+        <data>13</data>
+        <data>14</data>
+        <data>15</data>
+      </table>
+      <description/>
+    </table>
+  </rom>
+</roms>
