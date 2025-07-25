@@ -1,0 +1,221 @@
+//This script prints the decompiled C code of the function at the current cursor location.
+//It also processes the decompiled code to replace patterns like DELIM+xVarN + -0xOFFSET+DELIM
+//with a label found in the listing associated with -0xOFFSET(r13), unless the label is generic.
+//The output is printed to the console and also shown in a separate GUI window.
+//@author George Bowley
+//@category Analysis
+//@keybinding
+//@menupath
+//@toolbar
+//@runtime Java
+
+import ghidra.app.script.GhidraScript;
+import ghidra.program.model.listing.*;
+import ghidra.program.model.address.Address;
+import ghidra.program.model.symbol.Symbol;
+import ghidra.program.model.symbol.Reference;
+import ghidra.app.decompiler.DecompInterface;
+import ghidra.app.decompiler.DecompileOptions;
+import ghidra.app.decompiler.DecompileResults;
+import ghidra.util.task.ConsoleTaskMonitor;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.io.StringWriter;
+import java.io.PrintWriter;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
+import java.awt.BorderLayout;
+import java.awt.Font;
+
+public class ParseFunctionWithR13 extends GhidraScript {
+
+    // Helper function to check if a label is a generic Ghidra variable name
+    private boolean isGenericVarName(String labelName) {
+        if (labelName == null || labelName.isEmpty()) {
+            return false;
+        }
+        return labelName.matches("^(u|i|s|l)Var\\d*$");
+    }
+
+    // Helper function to find the label associated with an offset and register in the listing
+    private String findAssociatedLabelInListing(String offsetWithMinusHex, Function currentFunction, String registerName) {
+        String baseOperandPattern = String.format("%s(%s)", offsetWithMinusHex, registerName); 
+
+        Listing listing = currentProgram.getListing();
+        InstructionIterator instIter = listing.getInstructions(currentFunction.getBody(), true);
+
+        while (instIter.hasNext()) {
+            if (monitor.isCancelled()) break;
+            Instruction instruction = instIter.next();
+
+            for (int opIndex = 0; opIndex < instruction.getNumOperands(); opIndex++) {
+                String opRep = instruction.getDefaultOperandRepresentation(opIndex);
+                if (opRep == null) continue;
+
+                if (opRep.contains(baseOperandPattern)) {
+                    Reference[] references = instruction.getReferencesFrom();
+                    boolean foundByRef = false;
+                    for (Reference ref : references) {
+                        if (ref.getOperandIndex() == opIndex && ref.isMemoryReference()) {
+                            Address toAddr = ref.getToAddress();
+                            Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(toAddr);
+                            if (symbol != null) {
+                                String symbolName = symbol.getName();
+                                foundByRef = true;
+                                return symbolName.replace("_", ""); 
+                            }
+                        }
+                    }
+
+                    if (!foundByRef) { 
+                        String fullSearchPatternKey = baseOperandPattern + "=>"; 
+                        int startIndex = opRep.indexOf(fullSearchPatternKey);
+                        if (startIndex != -1) {
+                            String extractedLabel = opRep.substring(startIndex + fullSearchPatternKey.length()).trim();
+                            if (extractedLabel.contains(" ")) { 
+                                extractedLabel = extractedLabel.substring(0, extractedLabel.indexOf(" "));
+                            }
+                            if (!extractedLabel.isEmpty()) {
+                                return extractedLabel.replace("_", "");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return null; 
+    }
+
+
+    public void run() throws Exception {
+        if (currentProgram == null) {
+            println("No program is currently open.");
+            return;
+        }
+        if (currentAddress == null) {
+            println("No current address (cursor location) is set.");
+            return;
+        }
+
+        FunctionManager functionManager = currentProgram.getFunctionManager();
+        if (functionManager == null) {
+            println("Could not retrieve Function Manager.");
+            return;
+        }
+
+        final Function currentFunction = functionManager.getFunctionContaining(currentAddress);
+
+        if (currentFunction != null) {
+            println("Processing function: " + currentFunction.getName() + " at " + currentFunction.getEntryPoint().toString());
+
+            DecompInterface decompiler = new DecompInterface();
+            DecompileOptions options = new DecompileOptions();
+            ConsoleTaskMonitor decompilerMonitor = new ConsoleTaskMonitor(); 
+
+            String decompiledCode = null;
+
+            try {
+                if (!decompiler.openProgram(currentProgram)) {
+                    println("Decompiler Error: " + decompiler.getLastMessage());
+                    return;
+                }
+                DecompileResults results = decompiler.decompileFunction(currentFunction, 0, decompilerMonitor);
+
+                if (results == null) {
+                    println("Decompilation Error: DecompileResults were null. Last decompiler message: " + decompiler.getLastMessage());
+                    return;
+                }
+                
+                if (results.decompileCompleted()) {
+                    decompiledCode = results.getDecompiledFunction().getC();
+                } else {
+                    println("Decompilation did not complete successfully. Error: " + results.getErrorMessage());
+                }
+            } catch (Exception e) {
+                println("An exception occurred during decompilation: " + e.getMessage());
+                StringWriter sw = new StringWriter();
+                PrintWriter pw = new PrintWriter(sw);
+                e.printStackTrace(pw);
+                println("Stack Trace:\n" + sw.toString());
+            } finally {
+                decompiler.dispose();
+            }
+
+            if (decompiledCode != null) {
+                StringBuffer modifiedDecompiledCodeBuffer = new StringBuffer();
+                Pattern pattern = Pattern.compile(
+                    "([\\[\\]()])" +           // Group 1: Opening delimiter (any of [ ] ( ) )
+                    "\\s*" +
+                    "((?:u|i|s|l)Var\\d*)" + // Group 2: Variable name (e.g., uVar5, iVar12)
+                    "\\s*\\+\\s*" +
+                    "(-0x[0-9a-fA-F]{4})" +  // Group 3: Hex offset (e.g., -0x7ae8)
+                    "\\s*" +
+                    "([\\[\\]()])"            // Group 4: Closing delimiter (any of [ ] ( ) )
+                );
+                Matcher matcher = pattern.matcher(decompiledCode);
+
+                String registerForOffsetLookup = "r13"; 
+                int replacementsMade = 0;
+
+                while (matcher.find()) {
+                    if (monitor.isCancelled()) break;
+
+                    String variableName = matcher.group(2);     
+                    String offsetHexWithMinus = matcher.group(3); 
+
+                    String label = findAssociatedLabelInListing(offsetHexWithMinus, currentFunction, registerForOffsetLookup);
+                    
+                    if (label != null && !label.isEmpty()) {
+                        if (isGenericVarName(label)) { 
+                            matcher.appendReplacement(modifiedDecompiledCodeBuffer, matcher.group(0)); 
+                        } else {
+                            matcher.appendReplacement(modifiedDecompiledCodeBuffer, "(" + label + ")"); 
+                            replacementsMade++;
+                        }
+                    } else {
+                        matcher.appendReplacement(modifiedDecompiledCodeBuffer, matcher.group(0));
+                        println("WARN: In function '" + currentFunction.getName() + "', label not found for C pattern '" + matcher.group(0) + 
+                                "' (searched assembly for " + offsetHexWithMinus + "(" + registerForOffsetLookup + ")). Keeping original.");
+                    }
+                }
+                matcher.appendTail(modifiedDecompiledCodeBuffer);
+                
+                final String finalCodeToDisplay = modifiedDecompiledCodeBuffer.toString();
+                final String windowTitle = "Processed Decompiled Code - " + currentFunction.getName();
+                final boolean scriptMadeChanges = replacementsMade > 0;
+
+                // Print to console
+                println("\n--- Decompiled Code for " + currentFunction.getName() + (scriptMadeChanges ? " (Processed by script)" : "") + " ---");
+                println(finalCodeToDisplay);
+                println("\n--- End Decompiled Code ---");
+
+                // Display in a new Swing window
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        JFrame frame = new JFrame(windowTitle);
+                        JTextArea textArea = new JTextArea(finalCodeToDisplay);
+                        textArea.setEditable(false);
+                        textArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 13)); // Monospaced font for code
+                        
+                        JScrollPane scrollPane = new JScrollPane(textArea);
+                        frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+                        
+                        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Dispose window on close, don't exit Ghidra
+                        frame.setSize(800, 600); // Initial size
+                        frame.setLocationRelativeTo(null); // Center on screen (or relative to Ghidra window if possible)
+                        frame.setVisible(true);
+                    }
+                });
+
+            } else {
+                println("No decompiled code was generated to process.");
+            }
+
+        } else {
+            println("No function at current address: " + currentAddress.toString());
+        }
+    }
+}
