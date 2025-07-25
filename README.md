@@ -60,4 +60,4 @@ Many more functions are labelled in the gzf, but there are too many to document 
 # Notes
 
 - Please do not take my annotation as gospel, I may be wrong.
-- Please feel free to use this for your own projects, fork, or contribute.
+- Please feel free to use this for your own projects, fork, or contribute. I am unlikely to be able to continue to work on this due to study commitments, but will check in from time to time.
