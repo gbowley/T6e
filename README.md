@@ -1,5 +1,5 @@
 # T6e Unpacked
-Decompilation of the EFI T6E ECU. Experimental and incomplete.
+A decompilation of the EFI T6E ECU.
 
 Based on a full dump of the P138 firmware (Exige/Evora), including Bootloader, Adaptations, Coding, Calibration, Program, and SRAM.
 
@@ -34,6 +34,19 @@ Modification of live SRAM can be done using [TunerV2](https://github.com/gbowley
 
 Modification of flash program can be done using [LotusFlasher](https://github.com/Alcantor/LotusECU-T4e)
 
+# Key ECU Functions Mapped
+
+1. Injection = Yes
+2. Ignition = Yes
+3. Airmass/Load = Yes
+4. VVT = Yes
+5. Idle = Yes
+6. Rev Limit = Yes
+7. Sensor Scaling = Partial
+8. Adaption = Partial
+9. Coding = Partial
+10. Cruise Control = Partial
+
 # Key Functions
 
 1. MAIN_PROC_LOOP - Responsible for initialisation of ECU memory and hardware status checks. Then initiates the main infinite loop which includes core engine calculations, knock detection, adaptation, subsystem (TCS, CC, CAN) management.
@@ -43,3 +56,8 @@ Modification of flash program can be done using [LotusFlasher](https://github.co
 5. Set_Variable_Valve_Timing - Responsible for control of VVT on both intake and exhaust valves.
 
 Many more functions are labelled in the gzf, but there are too many to document here. These functions and their associated memory regions are a good place to start looking to understand this ECU. 
+
+# Notes
+
+- Please do not take my annotation as gospel, I may be wrong.
+- Please feel free to use this for your own projects, fork, or contribute.
